@@ -5,7 +5,6 @@
 
 Implementação de um **Algoritmo Genético híbrido com busca local** para o **Problema de Roteamento de Veículos com Janelas de Tempo (VRPTW)**, testado sobre as instâncias clássicas de benchmark de Solomon e Homberger.
 
----
 
 ## Sumário
 
@@ -29,8 +28,7 @@ O **VRPTW** (Vehicle Routing Problem with Time Windows) é um problema de otimiz
 - **Capacidade** máxima de cada veículo
 - **Janelas de tempo** `[a_i, b_i]` para o início do atendimento de cada cliente *i*
 - **Objetivo hierárquico** (padrão Solomon):
-  1. Minimizar o **número de veículos** utilizados
-  2. Minimizar a **distância total** percorrida
+  1. Minimizar a **distância total** percorrida
 
 ---
 
@@ -89,12 +87,11 @@ A busca local é aplicada periodicamente ao melhor indivíduo da população e a
 │
 ├── src/
 │   ├── vrp/
-│   │   └── vrptw_ga_v2.py      # Algoritmo principal (GA + Busca Local)
+│   │   └── vrp.py      # Algoritmo principal (GA + Busca Local)
 │   └── validar/
 │       └── validar.py          # Executor em lote + tabela comparativa
 │
 ├── Homberger.html              # Soluções ótimas da literatura para Homberger
-├── requirements.txt
 └── README.md
 ```
 
@@ -183,7 +180,7 @@ Route #1: 5 3 7 8 10 11 9 6 4 2 1
 
 Executa o algoritmo em **todas as instâncias** de uma pasta, compara com as soluções ótimas dos arquivos `.sol` e gera uma tabela comparativa.
 
-O `validar.py` deve estar no mesmo diretório que `vrptw_ga_v2.py`, ou o caminho do script deve ser informado via `--script`.
+O `validar.py` deve estar no mesmo diretório que `vrp.py`, ou o caminho do script deve ser informado via `--script`.
 
 ```bash
 python validar.py [opções]
@@ -206,9 +203,6 @@ python validar.py --time 60 --pop 100 --gen 200
 
 # Sem rich (tabela ASCII pura, sem dependências externas)
 python validar.py --no-rich
-
-# Executa cada instância em subprocesso isolado (mais robusto a crashes)
-python validar.py --subprocess
 ```
 
 ### Parâmetros
@@ -222,9 +216,7 @@ python validar.py --subprocess
 | `--gen` | `500` | Número máximo de gerações |
 | `--seed` | `42` | Semente aleatória |
 | `--only-parse` | `False` | Apenas lê os `.sol`, sem rodar o GA |
-| `--subprocess` | `False` | Executa o GA via subprocesso (mais isolado) |
 | `--csv` | `resultados_solomon.csv` | Arquivo CSV de saída |
-| `--no-rich` | `False` | Desativa cores (tabela ASCII simples) |
 
 ### Saída — Tabela comparativa
 
