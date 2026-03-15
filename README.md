@@ -318,7 +318,6 @@ Cost 827.3
 | 400 clientes | 600s | 100 |
 | 600–1000 clientes | 1200s+ | 80 |
 
-> **Nota:** O tempo de construção da população inicial cresce com O(n²) por instância. Para instâncias grandes, reduza `--pop` e aumente `--time`.
 
 
 
