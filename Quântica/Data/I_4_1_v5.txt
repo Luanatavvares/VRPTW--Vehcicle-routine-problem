@@ -1,0 +1,16 @@
+I_4_1_v2
+
+VEHICLE
+NUMBER     CAPACITY
+4          15
+
+CUSTOMER
+CUST NO.   XCOORD.   YCOORD.   DEMAND
+0          0         0         0
+1          5         0         9
+
+OPTIMAL SOLUTION
+Route 1: 0 -> 1 -> 0
+Routes 2, 3, 4: idle
+Total demand served: 9 (capacity per vehicle: 15)
+Approx. optimal cost (Euclidean): 10.00

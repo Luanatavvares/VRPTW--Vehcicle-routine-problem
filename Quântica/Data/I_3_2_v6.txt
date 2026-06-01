@@ -1,0 +1,18 @@
+I_3_2_v3
+
+VEHICLE
+NUMBER     CAPACITY
+3          7
+
+CUSTOMER
+CUST NO.   XCOORD.   YCOORD.   DEMAND
+0          0         0         0
+1          -4        3         5
+2          4         3         5
+
+OPTIMAL SOLUTION
+Route 1: 0 -> 1 -> 0  (demand: 5, capacity: 7)
+Route 2: 0 -> 2 -> 0  (demand: 5, capacity: 7)
+Route 3: idle
+Total demand served: 10 (joint route infeasible: 5+5=10 > 7)
+Approx. optimal cost (Euclidean): 20.00

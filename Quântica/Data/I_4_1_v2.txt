@@ -1,0 +1,11 @@
+I_4_1_v2
+
+VEHICLE
+NUMBER     CAPACITY
+4          15
+
+CUSTOMER
+CUST NO.   XCOORD.   YCOORD.   DEMAND
+0          0         0         0
+1          5         3         9
+
